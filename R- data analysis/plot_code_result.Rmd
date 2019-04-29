@@ -1,0 +1,100 @@
+---
+title: "Game Stocks Analysis"
+author: "Jasmine Yao"
+date: "2019/4/26"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = T)
+```
+
+```{r}
+library(tidyr)
+library(dplyr)
+library(ggplot2)
+
+```
+
+
+
+
+```{r}
+l=c("ATVI.csv","GLUU.csv","GME.csv","ZNGA.csv","NTDOY.csv")
+
+
+company<-read.csv(l[1])
+summary(company$Adj.Close,na.rm=T)
+sd(company$Adj.Close,na.rm=T)
+
+company %>%
+  ggplot(aes(x=substring(Date,7,10), y=Adj.Close))+
+  geom_point(color="brown3")+
+  labs(x="Date",y="Stock Price",title=paste("Stock Price 2019","of Activation Blizzard, Inc.",sep=" "))+
+  theme(axis.text.x=element_text(size=7))
+
+
+
+
+company<-read.csv(l[2])
+
+summary(company$Adj.Close,na.rm=T)
+sd(company$Adj.Close,na.rm=T)
+
+company %>%
+  ggplot(aes(x=substring(Date,7,10), y=Adj.Close))+
+  geom_point(color="brown3")+
+  labs(x="Date",y="Stock Price",title=paste("Stock Price 2019","of Glu Mobile",sep=" "))+
+  theme(axis.text.x=element_text(size=7))
+
+
+
+company<-read.csv(l[3])
+
+summary(company$Adj.Close,na.rm=T)
+sd(company$Adj.Close,na.rm=T)
+
+company %>%
+  ggplot(aes(x=substring(Date,7,10), y=Adj.Close))+
+  geom_point(color="brown3")+
+  labs(x="Date",y="Stock Price",title=paste("Stock Price 2019","of GameStop Corp.",sep=" "))+
+  theme(axis.text.x=element_text(size=7))
+
+
+
+
+company<-read.csv(l[4])
+
+summary(company$Adj.Close,na.rm=T)
+sd(company$Adj.Close,na.rm=T)
+
+company %>%
+  ggplot(aes(x=substring(Date,7,10), y=Adj.Close))+
+  geom_point(color="brown3")+
+  labs(x="Date",y="Stock Price",title=paste("Stock Price 2019","of Zynga",sep=" "))+
+  theme(axis.text.x=element_text(size=7))
+
+
+
+
+
+company<-read.csv(l[5])
+
+summary(company$Adj.Close,na.rm=T)
+sd(company$Adj.Close,na.rm=T)
+
+company %>%
+  ggplot(aes(x=substring(Date,7,10), y=Adj.Close))+
+  geom_point(color="brown3",)+
+  labs(x="Date",y="Stock Price",title=paste("Stock Price 2019","of Nintendo",sep=" "))+
+  theme(axis.text.x=element_text(size=7))
+
+```
+
+
+```
+
+```{r}
+
+```
+
